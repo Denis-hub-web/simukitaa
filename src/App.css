@@ -1,0 +1,90 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Ensure product images scale gracefully */
+.rf-hcard-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 260px;
+  padding: 10px;
+  width: 100%;
+}
+
+.rf-hcard-img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+/* Custom card size extension so new 60 class scales smoothly */
+.rf-hcard-60 {
+  min-width: 620px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1068px) {
+  .rf-hcard-60 {
+    min-width: 520px;
+  }
+}
+
+@media (max-width: 734px) {
+  .rf-hcard-60 {
+    min-width: 100%;
+  }
+
+  .rf-hcard-img-wrapper {
+    max-height: 200px;
+    padding: 6px;
+  }
+
+  .rf-hcard-img {
+    max-width: 240px;
+    max-height: 200px;
+  }
+}
+
+.elfsight-instagram-section {
+  padding: 80px 16px 40px;
+  background: #fff;
+}
+
+.elfsight-instagram-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.elfsight-instagram-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.elfsight-instagram-title h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.elfsight-instagram-title p {
+  color: #6e6e73;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .elfsight-instagram-section {
+    padding: 60px 12px 32px;
+  }
+
+  .elfsight-instagram-title h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: simukitaa-api
+    env: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    autoDeploy: true
+    healthCheckPath: /api/health
+    disk:
+      name: products-data
+      mountPath: /opt/render/project/src/server/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: INSTAGRAM_ACCESS_TOKEN
+        sync: false
+# Render Blueprint Configuration
+# This file allows you to deploy the backend automatically on Render
+# Go to https://render.com and create a new "Blueprint" from this repository
+
+services:
+  - type: web
+    name: simukitaa-backend
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+    # Uncomment and configure if you want to use a database in the future
+    # database:
+    #   name: simukitaa-db
+    #   plan: free
+
+
+

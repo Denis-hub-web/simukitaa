@@ -1,0 +1,79 @@
+/* Responsive Navigation Styles */
+.rf-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.rf-navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.rf-navbar-item-link {
+  white-space: nowrap;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .rf-navbar {
+    position: sticky;
+    top: 0;
+  }
+
+  .rf-navbar-content-wrapper {
+    overflow: hidden;
+  }
+
+  .rf-navbar-item-link {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .paddlenav {
+    display: flex;
+  }
+
+  /* Hide scrollbar on mobile but keep functionality */
+  .rf-navbar-content [data-core-scroller] {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .rf-navbar-content [data-core-scroller]::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .rf-navbar-item-link {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .paddlenav-arrow {
+    padding: 8px;
+  }
+}
+
+/* Touch-friendly scrolling on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .rf-navbar-content [data-core-scroller] {
+    scroll-snap-type: x mandatory;
+  }
+
+  .rf-navbar-item {
+    scroll-snap-align: start;
+  }
+}
+
+
+
